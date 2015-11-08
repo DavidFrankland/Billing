@@ -1,0 +1,144 @@
+﻿body {
+    background: #e7e7e7;
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+}
+
+#page {
+    background: white;
+    margin: 10px;
+    border: 2px solid #c0c0c0;
+    padding: 10px;
+}
+
+#header {
+    background: #4b6983;
+    border: 2px solid #7590ae;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#header h1 {
+    color: white;
+}
+
+#body {
+    padding: 10px;
+}
+
+span.right {
+    float: right;
+    margin: 0 3px 0 0;
+}
+
+a:link {
+    text-decoration: none;
+    border: 1px solid blue;
+    color: blue;
+    background: white;
+    padding: 5px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: blue;
+}
+
+a:active {
+    text-decoration: none;
+    background: #00bfff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: blue;
+    background: #eeeeff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    margin: 10px 0;
+}
+
+    table th {
+        text-align: left;
+    }
+
+        table th.first {
+            width: 30%;
+        }
+
+        table th.right {
+            text-align: right;
+        }
+
+    table td.first {
+        width: 30%;
+    }
+
+    table td.right {
+        text-align: right;
+    }
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+.display-label {
+    font-weight: bold;
+}
+
+.display-field {
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

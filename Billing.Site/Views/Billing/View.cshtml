@@ -1,0 +1,123 @@
+﻿@model Billing.Site.Models.Bill
+
+@{
+    ViewBag.Title = "Your Bill";
+}
+
+<fieldset>
+    <legend>Your Bill Summary</legend>
+    <div>
+        <span class="display-label">Generated on</span>
+        <span class="display-field">@Model.Statement.Generated.ToShortDateString()</span>
+    </div>
+    <div>
+        <span class="display-label">Due on</span>
+        <span class="display-field">@Model.Statement.Due.ToShortDateString()</span>
+    </div>
+    <div>
+        <span class="display-label">From</span>
+        <span class="display-field">@Model.Statement.Period.From.ToShortDateString()</span>
+        <span class="display-label">to</span>
+        <span class="display-field">@Model.Statement.Period.To.ToShortDateString()</span>
+    </div>
+    <div>
+        <span class="display-label">Total Due</span>
+        <span class="display-field right">@Model.Total</span>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Package</legend>
+    <table>
+        <thead>
+            <tr>
+                <th class="first">Type</th>
+                <th>Name</th>
+                <th class="right">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subscription in Model.Package.Subscriptions)
+            {
+                <tr>
+                    <td class="first">@subscription.Type</td>
+                    <td>@subscription.Name</td>
+                    <td class="right">@subscription.Cost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <span class="display-label">Package Total</span>
+        <span class="display-field right">@Model.Package.Total</span>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Call Charges</legend>
+    <table>
+        <thead>
+            <tr>
+                <th class="first">Number Called</th>
+                <th>Duration</th>
+                <th class="right">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var call in Model.CallCharges.Calls)
+            {
+                <tr>
+                    <td class="first">@call.Called</td>
+                    <td>@call.Duration</td>
+                    <td class="right">@call.Cost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <span class="display-label">Call Charges Total</span>
+        <span class="display-field right">@Model.CallCharges.Total</span>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Sky Store</legend>
+    <table>
+        <thead>
+            <tr>
+                <th class="first">Rental Title</th>
+                <th class="right">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var programme in Model.SkyStore.Rentals)
+            {
+                <tr>
+                    <td class="first">@programme.Title</td>
+                    <td class="right">@programme.Cost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th class="first">Buy-and-keep Title</th>
+                <th class="right">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var programme in Model.SkyStore.BuyAndKeep)
+            {
+                <tr>
+                    <td class="first">@programme.Title</td>
+                    <td class="right">@programme.Cost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <span class="display-label">Sky Store Total</span>
+        <span class="display-field right">@Model.SkyStore.Total</span>
+    </div>
+</fieldset>
